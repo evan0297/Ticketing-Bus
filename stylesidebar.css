@@ -1,0 +1,288 @@
+* {
+  font-family: 'Ubuntu', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: #253c7f;
+  width: 260px;
+  padding: 24px;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  transition: all ease-in 0.3s;
+  text-align: center;
+}
+
+.sidebar.hide {
+  width: 87px;
+  transition: all ease-out 0.4s;
+}
+
+.utama {
+  background-color: #eaeaea;
+  flex-grow: 1;
+}
+
+.sidebar .description-header {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  text-align: center;
+  line-height: 16px;
+  padding-left: 27px;
+  color: #ffffff;
+}
+
+.sidebar.hide .description-header {
+  display: none;
+}
+
+.sidebar a {
+  text-decoration: none;
+}
+
+.sidebar .header .list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.sidebar .header .illustration {
+  display: flex;
+  flex-direction: column;
+  margin-top: 140px;
+  margin-left: -75px;
+  box-sizing: border-box;
+}
+
+.sidebar.hide .illustration {
+  display: none;
+}
+
+.sidebar .header .gambar {
+  max-width: 90px;
+  height: 90px;
+}
+
+.sidebar .main {
+  margin-top: 110px;
+}
+
+.sidebar.hide .main {
+  margin-top: 10px;
+}
+.sidebar .main .list-item .description {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 14px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.sidebar.hide .main .list-item .description {
+  display: none;
+}
+
+.sidebar .main .list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 10px;
+  border-radius: 8px;
+  /*width: 205px;*/
+  box-sizing: border-box;
+  transition: all ease-in 0.4s;
+}
+
+.sidebar .main .list-item:hover {
+  background-color: #ff9900;
+  transition: all ease-in 0.4s;
+}
+
+.sidebar .main .description {
+  padding: 8px;
+}
+
+/* Toggle Menu*/
+#menu-button {
+  margin: 20px;
+  width: 32px;
+  position: absolute;
+  overflow: hidden;
+}
+
+#menu-label {
+  position: relative;
+  display: block;
+  height: 20px;
+  cursor: pointer;
+}
+
+#menu-checkbox {
+  display: none;
+}
+
+#hamburger,
+#menu-label:after,
+#menu-label:before {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: black;
+}
+
+#menu-label:after,
+#menu-label:before {
+  content: '';
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#menu-label:before {
+  top: 0;
+}
+
+#menu-label:after {
+  top: 8px;
+}
+
+#hamburger {
+  top: 16px;
+}
+
+#hamburger:before {
+  content: 'MENU';
+  position: absolute;
+  top: 5px;
+  right: 0;
+  left: 0;
+  color: #111827;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#menu-checkbox:checked + #menu-label::before {
+  left: -39px;
+}
+
+#menu-checkbox:checked + #menu-label::after {
+  left: 39px;
+}
+
+#menu-checkbox:checked + #menu-label #hamburger::before {
+  animation: moveUpThenDown 0.8s ease 0.2s forwards, shakeUp 0.8s ease 0.2s forwards, shakeDown 0.2s ease 0.8s forwards;
+}
+
+/* Animasi*/
+@keyframes moveUpThenDown {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -27px;
+  }
+  100% {
+    top: -14px;
+  }
+}
+
+@keyframes shakeUp {
+  0% {
+    transform: rotateZ(0);
+  }
+  50% {
+    transform: rotateZ(-10deg);
+  }
+  50% {
+    transform: rotateZ(0);
+  }
+  75% {
+    transform: rotateZ(10deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+@keyframes shakeDown {
+  0% {
+    transform: rotateZ(0);
+  }
+  80% {
+    transform: rotateZ(3deg);
+  }
+  90% {
+    transform: rotateZ(-3deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+/* Menu Pesan Tiket*/
+
+.card {
+  display: flex;
+  margin: 30px 20px 0px 20px;
+}
+
+.card form {
+  padding: 20px 35px 20px 35px;
+}
+
+.labelmenu {
+  margin-top: 12px;
+  margin-left: 70px;
+}
+
+.card-body .btnku {
+  background: #4285f4;
+  color: #fff;
+  width: 180px;
+  height: 35px;
+  border-radius: 5px;
+  border: thin solid #888;
+  box-shadow: 1px 1px 1px grey;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 80px;
+}
+.btn {
+  display: inline-block;
+  background: #4285f4;
+  color: #fff;
+  width: 180px;
+  height: 35px;
+  border-radius: 5px;
+  border: thin solid #888;
+  box-shadow: 1px 1px 1px grey;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 80px;
+}
+
+.MYimg {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.utama .card .imgku {
+  width: 90px;
+  height: 50px;
+}
